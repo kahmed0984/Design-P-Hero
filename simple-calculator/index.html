@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="It's me Shahanewaz Islam(Santo)">
+
+        <title>Calculator</title>
+
+        <!---------   favicon please   ----------->
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <!---------   google or custom fonts please   ----------->
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700" rel="stylesheet">
+        <!---------   fontawesome please   ----------->
+        <link rel="stylesheet" href="fonts/Fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="fonts/Themify/themify-icons.css">
+        
+        <!----------------plagin start---------------------->
+
+        <!----------------plagin stop---------------------->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <div id="calculator_border">
+            <div id="calculator_display">
+                <input class="form-control" type="text" name="screen" id="screen" placeholder="0" value="0">
+            </div>
+            <div id="calculator_buttons">
+                <ul class="nav navbar">
+                    <li class="nav-item">
+                        <button id="button7" class="btn btn-light">7</button>
+                        <button class="btn btn-light">8</button>
+                        <button class="btn btn-light">9</button>
+                        <button class="btn btn-light">/</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light">6</button>
+                        <button class="btn btn-light">5</button>
+                        <button class="btn btn-light">4</button>
+                        <button class="btn btn-light">x</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light">3</button>
+                        <button class="btn btn-light">2</button>
+                        <button class="btn btn-light">1</button>
+                        <button class="btn btn-light">-</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light">C</button>
+                        <button class="btn btn-light">0</button>
+                        <button class="btn btn-success">=</button>
+                        <button class="btn btn-light">+</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+
+
+        <!-----jQuery first, then Popper.js, then Bootstrap JS------->
+        <script src="js/jquery-3.4.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <!---------------plagin start-------------------->
+
+        <!---------------plagin end-------------------->
+
+        <script src="js/custom.js"></script>
+        <script>
+
+            
+            const button7 = document.getElementById('button7');
+            button7.addEventListener('click', function(){
+                const button7Number = parseFloat(button7.innerText);
+
+                const screen = document.getElementById('screen').value = button7Number  ;
+                
+                
+
+
+                
+            })
+
+
+
+
+        </script>
+    </body>
+</html>

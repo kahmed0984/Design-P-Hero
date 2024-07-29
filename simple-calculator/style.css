@@ -1,0 +1,36 @@
+body{
+  background: #2E2E2D;
+  display: grid;
+  place-items: center;
+  padding: 150px 0px;
+}
+
+
+#calculator_border{
+  width: 290px;
+  padding: 30px 10px;
+  border: 2px solid #bfbfbf;
+  border-radius: 5px;
+
+}
+#calculator_display{
+
+}
+#calculator_display input{
+  width: 85%;
+  margin: auto;
+  height: 55px;
+  background: aquamarine;
+  color: white;
+  font-size: 25px;
+  text-align: right;
+  margin: 15px auto;
+}
+
+#calculator_buttons button{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  box-shadow: none;
+  margin: 5px 5px;
+}
