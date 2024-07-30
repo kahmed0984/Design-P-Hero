@@ -11,6 +11,7 @@ body{
   padding: 30px 10px;
   border: 2px solid #bfbfbf;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px white;
 
 }
 #calculator_display{
@@ -25,6 +26,9 @@ body{
   font-size: 25px;
   text-align: right;
   margin: 15px auto;
+  box-shadow: inset 5px 5px 5px #2d2d2d, inset -2px -2px 5px white;
+
+
 }
 
 #calculator_buttons button{
@@ -33,4 +37,12 @@ body{
   border-radius: 50%;
   box-shadow: none;
   margin: 5px 5px;
+  box-shadow: 5px 5px 5px #9f9f9f;
+  outline: 1px solid #000;
+  outline-offset: 2px;
+
+  &:active{
+    transform: scale(0.94);
+    box-shadow: inset 5px 5px 5px rgb(105, 105, 105);
+  }
 }

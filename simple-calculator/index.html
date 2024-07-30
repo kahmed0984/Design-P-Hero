@@ -30,33 +30,33 @@
         
         <div id="calculator_border">
             <div id="calculator_display">
-                <input class="form-control" type="text" name="screen" id="screen" placeholder="0" value="0">
+                <input class="form-control text-dark " type="text" name="display" id="display" placeholder="0" value="">
             </div>
             <div id="calculator_buttons">
                 <ul class="nav navbar">
                     <li class="nav-item">
-                        <button id="button7" class="btn btn-light">7</button>
-                        <button class="btn btn-light">8</button>
-                        <button class="btn btn-light">9</button>
-                        <button class="btn btn-light">/</button>
+                        <button onclick="appendToDisplay('7')" class="btn btn-light">7</button>
+                        <button onclick="appendToDisplay('8')" class="btn btn-light">8</button>
+                        <button onclick="appendToDisplay('9')" class="btn btn-light">9</button>
+                        <button onclick="appendToDisplay('/')" class="btn btn-light">/</button>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-light">6</button>
-                        <button class="btn btn-light">5</button>
-                        <button class="btn btn-light">4</button>
-                        <button class="btn btn-light">x</button>
+                        <button onclick="appendToDisplay('4')" class="btn btn-light">4</button>
+                        <button onclick="appendToDisplay('5')" class="btn btn-light">5</button>
+                        <button onclick="appendToDisplay('6')" class="btn btn-light">6</button>
+                        <button onclick="appendToDisplay('*')" class="btn btn-light">x</button>
+                    </li>
+                    <li class=" nav-item">
+                        <button onclick="appendToDisplay('1')" class="btn btn-light">1</button>
+                        <button onclick="appendToDisplay('2')" class="btn btn-light">2</button>
+                        <button onclick="appendToDisplay('3')" class="btn btn-light">3</button>
+                        <button onclick="appendToDisplay('-')" class="btn btn-light">-</button>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-light">3</button>
-                        <button class="btn btn-light">2</button>
-                        <button class="btn btn-light">1</button>
-                        <button class="btn btn-light">-</button>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-light">C</button>
-                        <button class="btn btn-light">0</button>
-                        <button class="btn btn-success">=</button>
-                        <button class="btn btn-light">+</button>
+                        <button onclick="clearDisplay()" class="btn btn-light">C</button>
+                        <button onclick="appendToDisplay('0')" class="btn btn-light">0</button>
+                        <button onclick="calculate()" class="btn btn-success">=</button>
+                        <button onclick="appendToDisplay('+')" class="btn btn-light">+</button>
                     </li>
                 </ul>
             </div>
@@ -76,19 +76,33 @@
 
         <script src="js/custom.js"></script>
         <script>
+            // const arrayName = document.getElementsByTagName('button');
+            // for (let i = 0; i < arrayName.length; i++) {
+            //     const element = arrayName[i];
+            //     element.addEventListener('click', function(){
+            //         element.style.transform = 'scale(0.95)'
+            //     }) 
+            // }
+
+
 
             
-            const button7 = document.getElementById('button7');
-            button7.addEventListener('click', function(){
-                const button7Number = parseFloat(button7.innerText);
-
-                const screen = document.getElementById('screen').value = button7Number  ;
-                
-                
-
-
-                
-            })
+            const display = document.getElementById('display');
+            function appendToDisplay(input){
+                // display.value = display.value + input;
+                display.value += input ;
+            }
+            function clearDisplay(){
+                display.value = '';
+            }
+            function calculate(){
+                try{
+                    display.value = eval(display.value);
+                }
+                catch(error){
+                    display.value = 'Error';
+                }
+            }
 
 
 
