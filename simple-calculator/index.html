@@ -35,6 +35,12 @@
             <div id="calculator_buttons">
                 <ul class="nav navbar">
                     <li class="nav-item">
+                        <button onclick="clearDisplay()" class="btn btn-light">AC</button>
+                        <button onclick="appendToDisplay(deleteLastString)" class="btn btn-light">DE</button>
+                        <button onclick="appendToDisplay('(')" class="btn btn-light">(</button>
+                        <button onclick="appendToDisplay(')')" class="btn btn-light">)</button>
+                    </li>
+                    <li class="nav-item">
                         <button onclick="appendToDisplay('7')" class="btn btn-light">7</button>
                         <button onclick="appendToDisplay('8')" class="btn btn-light">8</button>
                         <button onclick="appendToDisplay('9')" class="btn btn-light">9</button>
@@ -53,7 +59,7 @@
                         <button onclick="appendToDisplay('-')" class="btn btn-light">-</button>
                     </li>
                     <li class="nav-item">
-                        <button onclick="clearDisplay()" class="btn btn-light">C</button>
+                        <button onclick="appendToDisplay('.')" class="btn btn-light">.</button>
                         <button onclick="appendToDisplay('0')" class="btn btn-light">0</button>
                         <button onclick="calculate()" class="btn btn-success">=</button>
                         <button onclick="appendToDisplay('+')" class="btn btn-light">+</button>
@@ -90,7 +96,7 @@
             const display = document.getElementById('display');
             function appendToDisplay(input){
                 // display.value = display.value + input;
-                display.value += input ;
+                display.value += input ; // pasa pasi songkha bosanor jonno 
             }
             function clearDisplay(){
                 display.value = '';
