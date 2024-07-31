@@ -42,8 +42,8 @@
                                 <div onclick="clearDisplay()" class="button">C</div>
                             </div>
                             <div>
-                                <button onclick="submitBtn()" type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
+                                <button onclick="submitBtn()" type="submit" class="submit-btn"><span id="trySubmit">Submit</span></button>
+                                <p  class="action-left"><span id="tryTimes">3</span> try left</p>
                             </div>
                     </div>
                 </div>
@@ -88,9 +88,20 @@
             }else {
                 document.getElementById('pinWrong').style.display = 'block';
                 document.getElementById('pinMatch').style.display = 'none';
-            }     
+                
+                const tryTimes = document.getElementById('tryTimes');
+                if(tryTimes.innerText > 1){
+                    tryTimes.innerText -= 1;
+                }
+                else if(tryTimes.innerText == 1){
+                    document.getElementById('trySubmit').innerText = 'Error';
+                    tryTimes.innerText = 0
+                }
+                else if(tryTimes.innerText == 0){
+                    document.getElementById('trySubmit').parentElement.style.display = 'none'
+                }
+            }   
         }
-
 
 
     </script>
