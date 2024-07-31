@@ -36,7 +36,7 @@
                 <ul class="nav navbar">
                     <li class="nav-item">
                         <button onclick="clearDisplay()" class="btn btn-light">AC</button>
-                        <button onclick="appendToDisplay(deleteLastString)" class="btn btn-light">DE</button>
+                        <button onclick="oneDelete()" class="btn btn-light">DE</button>
                         <button onclick="appendToDisplay('(')" class="btn btn-light">(</button>
                         <button onclick="appendToDisplay(')')" class="btn btn-light">)</button>
                     </li>
@@ -108,6 +108,9 @@
                 catch(error){
                     display.value = 'Error';
                 }
+            }
+            function oneDelete(){
+                display.value = display.value.toString().slice(0, -1) ;
             }
 
 
