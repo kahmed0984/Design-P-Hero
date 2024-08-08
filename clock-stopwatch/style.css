@@ -8,6 +8,10 @@ body{
 }
 
 /* Digital clock*/
+.digital_clock{
+  width: 40%;
+  float: left;
+}
 .digital_clock .box {
   background-color:pink;
   display: inline-block;
@@ -61,6 +65,7 @@ body{
   display: grid;
   place-items: center;
   margin-top: 60px;
+  width: 60%;
 }
 .alalog_clock .box{
   width: 420px;
@@ -119,9 +124,9 @@ body{
   position: absolute;
   border:1px solid rgb(37, 31, 106);
   border-radius:50%;
-  opacity: .3;
+  opacity: .5;
   
-  &::before{
+  /* &::before{
     content: '';
     position: absolute;
     top:-8.5px;
@@ -131,7 +136,8 @@ body{
     background-color: var(--color);
     border-radius: 50%;
     transform: translate(-50% ,-50%);
-  }
+    
+  } */
 }
 
 .analog_hand i{
@@ -145,6 +151,7 @@ body{
 .analog_hand .hour{
   height: 150px;
   width: 150px;
+   z-index: 18;
   i{
     width: 8px;
   }
@@ -152,6 +159,7 @@ body{
 .analog_hand .minutes{
   height: 215px;
   width: 215px;
+  z-index: 19;
   i{
     width: 6px;
   }
@@ -159,7 +167,16 @@ body{
 .analog_hand .seconds{
   height: 280px;
   width: 280px;
-
+  z-index: 20;
+  &:after{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    top:150px;
+    background-color: var(--color);
+    transform: translate(-50% ,-50%);
+  }
 }
 
 
