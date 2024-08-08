@@ -89,7 +89,7 @@ body{
     background: transparent;
     border-radius: 50%;
     border:3px solid #ffffff;
-    z-index: 1;
+    z-index: 100;
   }
 }
 .alalog_clock .box span{
@@ -124,7 +124,7 @@ body{
   position: absolute;
   border:1px solid rgb(37, 31, 106);
   border-radius:50%;
-  opacity: .5;
+  opacity: .8;
   
   /* &::before{
     content: '';
@@ -168,15 +168,18 @@ body{
   height: 280px;
   width: 280px;
   z-index: 20;
-  &:after{
+  i{
+    height: 56%;
+  }
+  /* &:after{
     content: '';
     position: absolute;
     width: 4px;
-    height: 20px;
+    height: 30px;
     top:150px;
     background-color: var(--color);
     transform: translate(-50% ,-50%);
-  }
+  } */
 }
 
 
