@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="It's me Shahanewaz Islam(Santo)">
+
+        <title>Clock-Stopwatch</title>
+
+        <!---------   favicon please   ----------->
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <!---------   google or custom fonts please   ----------->
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700" rel="stylesheet">
+        <!---------   fontawesome please   ----------->
+        <link rel="stylesheet" href="fonts/Fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="fonts/Themify/themify-icons.css">
+        
+        <!----------------plagin start---------------------->
+
+        <!----------------plagin stop---------------------->
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+
+        <div class="clock_section">
+            <div class="digital_clock">
+                <div class="box">
+                    <span id="hr">00</span>
+                    <span>:</span>
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                    <span id="ap">AM</span>
+                </div>
+            </div>
+            <div class="alalog_clock">
+                <div class="box">
+                    <div class="analog_hand">
+                        <div id="hour" class="hour" style="--color:rgb(22, 233, 22);"><i></i></div>
+                        <div id="minutes" class="minutes" style="--color:rgb(208, 255, 0);"><i></i></div>
+                        <div id="seconds" class="seconds" style="--color:rgb(255, 35, 160);"><i></i></div>
+                    </div>
+
+                    <span style="--i:1"><b>1</b></span>
+                    <span style="--i:2"><b>2</b></span>
+                    <span style="--i:3"><b>3</b></span>
+                    <span style="--i:4"><b>4</b></span>
+                    <span style="--i:5"><b>5</b></span>
+                    <span style="--i:6"><b>6</b></span>
+                    <span style="--i:7"><b>7</b></span>
+                    <span style="--i:8"><b>8</b></span>
+                    <span style="--i:9"><b>9</b></span>
+                    <span style="--i:10"><b>10</b></span>
+                    <span style="--i:11"><b>11</b></span>
+                    <span style="--i:12"><b>12</b></span>
+                </div>
+            </div>
+            <!-- <div class="stopwatch">
+                <div class="box">
+                    <span id="minutes">00</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                    <span>:</span>
+                    <span id="mili_seconds">00</span>
+                </div>
+                <div class="stop_btn">
+                    <button>start</button>
+                </div>
+            </div> -->
+        </div>
+
+
+        <!-----jQuery first, then Popper.js, then Bootstrap JS------->
+        <script src="js/jquery-3.4.0.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <!---------------plagin start-------------------->
+
+        <!---------------plagin end-------------------->
+
+        <script src="js/custom.js"></script>
+        <script>
+            // Digital clock
+            const hr = document.getElementById('hr');
+            const min = document.getElementById('min');
+            const sec = document.getElementById('sec');
+            const ap = document.getElementById('ap');
+
+            setInterval(() => {
+                let currentTime = new Date;
+                
+                h = currentTime.getHours();
+                m = currentTime.getMinutes();
+                s = currentTime.getSeconds();
+
+                h>=12 ? ap.innerText = 'PM':'AM';
+                h>12 ? h = h-12: h ;
+
+                hr.innerText = h <10 ? '0' + h : h;
+                min.innerText =m <10 ? '0' + m : m;
+                sec.innerText =s <10 ? '0' + s : s;
+
+            }, 1000);
+
+
+
+            //Analag Clock
+            let hours = document.getElementById('hour');
+            let minutes = document.getElementById('minutes');
+            let seconds = document.getElementById('seconds');
+
+            setInterval(() => {
+                let hour = new Date().getHours() * 30;
+                let minute = new Date().getMinutes() * 6;
+                let second = new Date().getSeconds() * 6;
+
+                hours.style.transform = `rotateZ(${hour+(minute/12)}deg)`;
+                minutes.style.transform = `rotateZ(${minute}deg)`;
+                seconds.style.transform = `rotateZ(${second}deg)`;
+            });
+
+
+
+
+
+
+
+
+            //stop-watch
+            // const minutes = document.getElementById('minutes');
+            // const seconds = document.getElementById('seconds');
+            // const mili_seconds = document.getElementById('mili_seconds');
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

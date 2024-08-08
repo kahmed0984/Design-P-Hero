@@ -1,0 +1,165 @@
+body{
+	font-family: 'Titillium Web', sans-serif;
+	text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  color: white;
+  background: linear-gradient(45deg, #000000,#160b39);
+}
+
+/* Digital clock*/
+.digital_clock .box {
+  background-color:pink;
+  display: inline-block;
+  font-size: 40px; 
+  padding: 0 20px;
+  border-radius: 5px;
+  margin-top:60px;
+  backdrop-filter: blur(40px);
+  padding-bottom: 20px;
+  
+}
+.digital_clock .box span{
+  position: relative;
+  font-weight: 500;
+}
+.digital_clock .box span::after{
+  
+  font-size: 11px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.digital_clock .box span:nth-child(1)::after{
+  content: "Hours";
+}
+.digital_clock .box span:nth-child(3)::after{
+  content: "Minutes";
+}
+.digital_clock .box span:nth-child(5)::after{
+  content: "Seconds";
+}
+.digital_clock .box span:nth-child(4){
+  animation: animate 1s steps(1)  infinite ;
+}
+@keyframes animate {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  
+}
+
+
+
+
+/* Digital clock*/
+.alalog_clock{
+  display: grid;
+  place-items: center;
+  margin-top: 60px;
+}
+.alalog_clock .box{
+  width: 420px;
+  height: 420px;
+  background-color: #0c0622;
+  border-radius: 50%;
+  box-shadow:inset -5px -5px 21px  rgb(0, 0, 0),
+           inset 5px 5px 20px rgb(114, 101, 255),
+           5px 5px 15px rgb(127, 95, 196); 
+  position: relative; 
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+
+  &::before{
+    content: '';
+    position:absolute;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+    border-radius: 50%;
+    border:3px solid #ffffff;
+    z-index: 1;
+  }
+}
+.alalog_clock .box span{
+  color:#896cff;
+  position: absolute;
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+
+  b{
+    font-size: 2em;
+    opacity: .5;
+    font-weight: 600;
+    display:inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+  }
+}
+
+
+
+
+
+.analog_hand{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.analog_hand .hour,
+.analog_hand .minutes,
+.analog_hand .seconds{
+  position: absolute;
+  border:1px solid rgb(37, 31, 106);
+  border-radius:50%;
+  opacity: .3;
+  
+  &::before{
+    content: '';
+    position: absolute;
+    top:-8.5px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--color);
+    border-radius: 50%;
+    transform: translate(-50% ,-50%);
+  }
+}
+
+.analog_hand i{
+  position: absolute;
+  width: 4px;
+  height: 50%;
+  background-color: var(--color);
+  transform: translate(-50%);
+  border-radius: 6px 6px 0 0;
+}
+.analog_hand .hour{
+  height: 150px;
+  width: 150px;
+  i{
+    width: 8px;
+  }
+}
+.analog_hand .minutes{
+  height: 215px;
+  width: 215px;
+  i{
+    width: 6px;
+  }
+}
+.analog_hand .seconds{
+  height: 280px;
+  width: 280px;
+
+}
+
+
